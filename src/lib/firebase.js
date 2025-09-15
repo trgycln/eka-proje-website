@@ -4,12 +4,12 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // Senin Firebase proje yapılandırma bilgilerin
 const firebaseConfig = {
-  apiKey: "AIzaSyC_54lqjMnEtLTAiqSzlEOE54BsfZrFHHA",
-  authDomain: "eka-proje-website.firebaseapp.com",
-  projectId: "eka-proje-website",
-  storageBucket: "eka-proje-website.firebasestorage.app",
-  messagingSenderId: "621390424757",
-  appId: "1:621390424757:web:d8c84019d0ba2e9631acfc"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 

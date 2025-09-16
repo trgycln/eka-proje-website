@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Osmaniye Akyar Mahallesi 1. Etap Konutları",
+    "summary": "Osmaniye, Akyar Mahallesi'nde gerçekleştirilen 1001 konut ve 11 dükkandan oluşan altyapı ve çevre düzenlemesi projesi.",
+    "status": "Tamamlandı", "city": "Osmaniye", "district": "Merkez, Akyar Mahallesi", "categories": ["Toplu Konut", "Altyapı"],
+    "konutSayisi": 1001, "dukkanSayisi": 11, "isveren": "TOKİ"
+  },
+  {
+    "title": "Osmaniye Akyar Mahallesi 2. Etap Konutları",
+    "summary": "Osmaniye Akyar projesinin ikinci etabında 819 konut ve 7 dükkan inşaatı ile altyapı ve çevre düzenlemesi işleri tamamlanmıştır.",
+    "status": "Tamamlandı", "city": "Osmaniye", "district": "Merkez, Akyar Mahallesi", "categories": ["Toplu Konut", "Altyapı"],
+    "konutSayisi": 819, "dukkanSayisi": 7, "isveren": "TOKİ"
+  },
+  {
+    "title": "Kahramanmaraş Afşin Gerger 3. Etap Konutları",
+    "summary": "Kahramanmaraş'ın Afşin ilçesi, Gerger Mahallesi'nde 1006 konut ve 8 dükkanlık 3. etap projesi hayata geçirilmiştir.",
+    "status": "Tamamlandı", "city": "Kahramanmaraş", "district": "Afşin, Gerger Mahallesi", "categories": ["Toplu Konut", "Altyapı"],
+    "konutSayisi": 1006, "dukkanSayisi": 8, "isveren": "TOKİ"
+  },
+  {
+    "title": "Hatay Hassa Aşağıkarafakılı 3. Etap Konutları",
+    "summary": "Hatay Hassa'da 957 daire ve 8 dükkandan oluşan Aşağıkarafakılı 3. etap konut projesi ve altyapı işleri tamamlanmıştır.",
+    "status": "Tamamlandı", "city": "Hatay", "district": "Hassa, Aşağıkarafakılı Mahallesi", "categories": ["Toplu Konut", "Altyapı"],
+    "konutSayisi": 957, "dukkanSayisi": 8, "isveren": "TOKİ"
+  },
+  {
+    "title": "Hatay Hassa Aşağıkarafakılı 4. Etap Konutları",
+    "summary": "Aşağıkarafakılı projesinin 4. etabı kapsamında 1149 konut inşaatı ve çevre düzenlemesi işleri bitirilmiştir.",
+    "status": "Tamamlandı", "city": "Hatay", "district": "Hassa, Aşağıkarafakılı Mahallesi", "categories": ["Toplu Konut", "Altyapı"],
+    "konutSayisi": 1149, "dukkanSayisi": 0, "isveren": "TOKİ"
+  },
+  {
+    "title": "Hatay Defne Merkez Konut ve Dükkan Projesi",
+    "summary": "Hatay Defne'de iki etap halinde toplam 1485 konut ve 307 dükkan inşaatını kapsayan büyük bir kentsel dönüşüm projesidir.",
+    "status": "Tamamlandı", "city": "Hatay", "district": "Defne, Merkez", "categories": ["Toplu Konut", "Ticari", "Altyapı"],
+    "konutSayisi": 1485, "dukkanSayisi": 307, "isveren": "TOKİ"
+  },
+  {
+    "title": "Hatay Defne Bedevi Mahallesi Konut ve Dükkan Projesi",
+    "summary": "Defne, Bedevi Mahallesi 9. Bölge'de 588 konut, 6 köy dükkanı ve 48 dükkandan oluşan karma bir projedir.",
+    "status": "Tamamlandı", "city": "Hatay", "district": "Defne, Bedevi Mahallesi", "categories": ["Toplu Konut", "Ticari", "Altyapı"],
+    "konutSayisi": 588, "dukkanSayisi": 54, "isveren": "TOKİ"
+  },
+  {
+    "title": "Hatay Antakya Konut ve Dükkan Projesi",
+    "summary": "Antakya'nın Çekmece ve Gazi mahallelerinde 1042 konut, 9 köy dükkanı ve 119 dükkan inşaatını içeren projedir.",
+    "status": "Tamamlandı", "city": "Hatay", "district": "Antakya, Çekmece ve Gazi Mah.", "categories": ["Toplu Konut", "Ticari", "Altyapı"],
+    "konutSayisi": 1042, "dukkanSayisi": 128, "isveren": "TOKİ"
+  },
+  {
+    "title": "Konya Yeni Sanayi Sitesi 2. Etap",
+    "summary": "Konya Karatay'da 720 sanayi ve 48 ticari dükkandan oluşan Yeni Motorlu Küçük Sanayi Sitesi'nin 2. etap ikmal işidir.",
+    "status": "Tamamlandı", "city": "Konya", "district": "Karatay, Fevzi Çakmak Mahallesi", "categories": ["Sanayi Sitesi", "Ticari", "Altyapı"],
+    "konutSayisi": 0, "dukkanSayisi": 768, "isveren": "TOKİ"
+  },
+  {
+    "title": "Konya Yeni Sanayi Sitesi 3. Etap",
+    "summary": "Konya Yeni Motorlu Küçük Sanayi Sitesi'nin 3. etabı kapsamında 616 sanayi ve 21 ticari dükkan inşa edilmiştir.",
+    "status": "Tamamlandı", "city": "Konya", "district": "Karatay, Fevzi Çakmak Mahallesi", "categories": ["Sanayi Sitesi", "Ticari", "Altyapı"],
+    "konutSayisi": 0, "dukkanSayisi": 637, "isveren": "TOKİ"
+  },
+  {
+    "title": "Konya Yeni Sanayi Sitesi 4. Etap",
+    "summary": "Projenin 4. etabı, 568 sanayi dükkanı ve 21 ticari dükkanın yapımını kapsamaktadır.",
+    "status": "Tamamlandı", "city": "Konya", "district": "Karatay, Fevzi Çakmak Mahallesi", "categories": ["Sanayi Sitesi", "Ticari", "Altyapı"],
+    "konutSayisi": 0, "dukkanSayisi": 589, "isveren": "TOKİ"
+  },
+  {
+    "title": "Malatya Battalgazi Beydağı Konutları",
+    "summary": "Malatya'nın Battalgazi ilçesinde, 886 konut ve 38 dükkandan oluşan 3. ve 4. etap projesidir.",
+    "status": "Tamamlandı", "city": "Malatya", "district": "Battalgazi, Beydağı Mahallesi", "categories": ["Toplu Konut", "Ticari", "Altyapı"],
+    "konutSayisi": 886, "dukkanSayisi": 38, "isveren": "TOKİ"
+  },
+  {
+    "title": "Diyarbakır Kayapınar Şehir Hastanesi",
+    "summary": "Diyarbakır Kayapınar'da inşa edilen 750 yataklı (1000 yatak kapasiteli) modern şehir hastanesi yapım işidir.",
+    "status": "Tamamlandı", "city": "Diyarbakır", "district": "Kayapınar", "categories": ["Hastane", "Altyapı", "Sosyal Tesis"],
+    "konutSayisi": 0, "dukkanSayisi": 0, "isveren": "Sağlık Bakanlığı"
+  },
+  {
+    "title": "Şırnak Merkez Gazi Mahallesi 2. Etap Konutları",
+    "summary": "Şırnak merkezde 511 konut, 42 dükkan, bir cami ve taziye evini içeren sosyal donatılı bir projedir.",
+    "status": "Tamamlandı", "city": "Şırnak", "district": "Merkez, Gazi Mahallesi", "categories": ["Toplu Konut", "Ticari", "Sosyal Tesis", "Altyapı"],
+    "konutSayisi": 511, "dukkanSayisi": 42, "isveren": "TOKİ"
+  },
+  {
+    "title": "Şırnak Merkez Bahçelievler 1. Etap Konutları",
+    "summary": "Şırnak Bahçelievler mahallesinde 645 konut, 24 ticari alan ve bir cami inşaatını kapsayan projedir.",
+    "status": "Tamamlandı", "city": "Şırnak", "district": "Merkez, Bahçelievler Mahallesi", "categories": ["Toplu Konut", "Ticari", "Sosyal Tesis", "Altyapı"],
+    "konutSayisi": 645, "dukkanSayisi": 24, "isveren": "TOKİ"
+  },
+  {
+    "title": "Ankara Mamak Kentsel Yenileme Projesi 3. Etap",
+    "summary": "Ankara Mamak'ta Anayurt ve Gülseren mahallelerini kapsayan kentsel dönüşüm projesinin 3. etabıdır. 889 konut, 2 ticaret merkezi ve bir cami içerir.",
+    "status": "Tamamlandı", "city": "Ankara", "district": "Mamak, Anayurt ve Gülseren Mah.", "categories": ["Toplu Konut", "Ticari", "Sosyal Tesis", "Altyapı"],
+    "konutSayisi": 889, "dukkanSayisi": 0, "isveren": "TOKİ"
+  },
+  {
+    "title": "Ankara Gölbaşı İncek 2. Etap Konutları",
+    "summary": "Ankara İncek'te 1585 konut, otoparklar, sosyal tesis, okul, cami ve ticaret merkezi gibi çok kapsamlı bir yaşam alanı projesidir.",
+    "status": "Tamamlandı", "city": "Ankara", "district": "Gölbaşı, İncek", "categories": ["Toplu Konut", "Ticari", "Sosyal Tesis", "Altyapı"],
+    "konutSayisi": 1585, "dukkanSayisi": 0, "isveren": "TOKİ"
+  },
+  {
+    "title": "Kocaeli Stadyumu",
+    "summary": "Kocaeli'de inşa edilen 33.000 seyirci kapasiteli modern stadyum projesidir.",
+    "status": "Tamamlandı", "city": "Kocaeli", "district": "Merkez", "categories": ["Spor Kompleksi", "Altyapı"],
+    "konutSayisi": 0, "dukkanSayisi": 0, "isveren": "TOKİ"
+  },
+  {
+    "title": "Manisa Akhisar Stadyum ve Spor Salonu",
+    "summary": "Manisa Akhisar'a kazandırılan 12.000 kişilik stadyum ve 2.000 kişilik kapalı spor salonunu içeren spor kompleksi işidir.",
+    "status": "Tamamlandı", "city": "Manisa", "district": "Akhisar", "categories": ["Spor Kompleksi", "Altyapı"],
+    "konutSayisi": 0, "dukkanSayisi": 0, "isveren": "TOKİ"
+  }
+]

@@ -5,12 +5,9 @@
 import { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
-// Gerekli tüm ikonları import ediyoruz
 import { FaCity, FaBuilding, FaClipboardList, FaInfoCircle, FaHardHat, FaMapMarkedAlt, FaUserTie, FaFilePdf, FaRulerHorizontal, FaStore } from 'react-icons/fa';
 
-// --- YARDIMCI BİLEŞENLER ---
-
-// Proje Durumuna göre renkli etiket döndüren bileşen
+// --- YARDIMCI BİLEŞEN: Proje Durumu için renkli etiket ---
 const StatusBadge = ({ status }) => {
   const styles = {
     'Tamamlandı': 'bg-green-100 text-green-800',
@@ -20,16 +17,13 @@ const StatusBadge = ({ status }) => {
   return <span className={`px-3 py-1 rounded-full text-xs font-semibold ${styles[status] || 'bg-gray-100 text-gray-800'}`}>{status}</span>;
 };
 
-// Proje Detaylarını gösteren Gelişmiş Modal (Popup) Bileşeni
+// --- YARDIMCI BİLEŞEN: Proje Detaylarını gösteren Modal (Popup) ---
 const ProjectDetailModal = ({ project, onClose }) => {
   if (!project) return null;
 
-  // Proje Künyesi için yardımcı bileşen
   const DetailItem = ({ icon, label, value }) => (
     <div className="flex items-start">
-      <div className="flex-shrink-0 w-6 text-center">
-        {icon}
-      </div>
+      <div className="flex-shrink-0 w-6 text-center">{icon}</div>
       <div className="ml-4">
         <span className="text-sm text-slate-500 block">{label}</span>
         <p className="font-semibold text-slate-800">{value}</p>
@@ -37,11 +31,9 @@ const ProjectDetailModal = ({ project, onClose }) => {
     </div>
   );
 
-  // Proje link butonları için yardımcı bileşen
   const LinkButton = ({ href, icon, text }) => {
     const hasLink = href && href.trim() !== '';
     const Tag = hasLink ? 'a' : 'div';
-
     return (
       <Tag
         href={hasLink ? href : undefined}
@@ -73,7 +65,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
           <button onClick={onClose} className="text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
         </div>
         
-        <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8 max-h-[80vh] overflow-y-auto">
+        <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8 max-h-[70vh] overflow-y-auto">
           <div className="md:col-span-1 space-y-6 border-r pr-6">
             <h3 className="font-bold text-xl text-slate-700 border-b pb-2">Proje Künyesi</h3>
             <DetailItem icon={<FaUserTie className="text-slate-500" />} label="İşveren" value={project.isveren || 'Belirtilmemiş'} />
@@ -109,8 +101,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
   );
 };
 
-
-// --- ANA SAYFA ---
+// --- ANA SAYFA BİLEŞENİ ---
 export default function ProjectsPage() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -146,31 +137,44 @@ export default function ProjectsPage() {
             <div className="col-span-2 text-center">Durum</div>
           </div>
           
-          {projects.map((project, index) => (
-            <div 
-              key={project.id} 
-              onClick={() => setSelectedProject(project)}
-              className="grid grid-cols-12 gap-4 p-4 border-b last:border-b-0 hover:bg-blue-50 cursor-pointer transition-colors"
-            >
-              <div className="hidden md:flex md:items-center md:justify-center col-span-1 text-sm text-gray-500 font-medium">{index + 1}</div>
-              
-              <div className="col-span-12 md:col-span-4">
-                <p className="font-semibold text-gray-800">{project.title}</p>
-                <div className="flex items-center space-x-2 md:hidden mt-1 text-xs text-gray-500">
-                  <span>#{index + 1}</span>
-                  <span>&bull;</span>
-                  <span>{project.city}</span>
+          <div>
+            {projects.map((project, index) => (
+              <div key={project.id}>
+                {/* MASAÜSTÜ GÖRÜNÜMÜ (Satırlar) */}
+                <div 
+                  onClick={() => setSelectedProject(project)}
+                  className="hidden md:grid md:grid-cols-12 gap-4 p-4 border-b last:border-b-0 hover:bg-blue-50 cursor-pointer transition-colors"
+                >
+                  <div className="flex items-center justify-center col-span-1 text-sm text-gray-500 font-medium">{index + 1}</div>
+                  <div className="col-span-4 flex items-center"><p className="font-semibold text-gray-800">{project.title}</p></div>
+                  <div className="flex items-center col-span-3 text-sm text-gray-700">{project.city}, {project.district}</div>
+                  <div className="flex items-center col-span-2 text-sm text-gray-700">{project.categories?.join(', ')}</div>
+                  <div className="col-span-2 flex items-center justify-center">
+                    <StatusBadge status={project.status} />
+                  </div>
+                </div>
+
+                {/* MOBİL GÖRÜNÜMÜ (Kartlar) */}
+                <div 
+                  onClick={() => setSelectedProject(project)}
+                  className="md:hidden p-4 border-b last:border-b-0 hover:bg-blue-50 cursor-pointer"
+                >
+                  <div className="flex justify-between items-start">
+                    <div className="pr-4">
+                      <p className="font-bold text-base text-gray-800">{project.title}</p>
+                      <p className="text-sm text-gray-600 mt-1">{project.city}, {project.district}</p>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <StatusBadge status={project.status} />
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2 bg-gray-100 inline-block px-2 py-1 rounded">
+                    {project.categories?.join(', ')}
+                  </p>
                 </div>
               </div>
-
-              <div className="hidden md:flex md:items-center col-span-3 text-sm text-gray-700">{project.city}, {project.district}</div>
-              <div className="hidden md:flex md:items-center col-span-2 text-sm text-gray-700">{project.categories?.join(', ')}</div>
-              
-              <div className="col-span-12 md:col-span-2 flex items-center justify-end md:justify-center">
-                <StatusBadge status={project.status} />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
       

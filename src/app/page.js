@@ -26,33 +26,23 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section - Siyah Katman OLMADAN */}
+      {/* Hero Section - Mobil için Optimize Edilmiş Hali */}
       <section 
-        className="relative h-[60vh] md:h-[75vh] flex items-center justify-center text-white overflow-hidden bg-black"
+        className="relative h-[55vh] md:h-[75vh] bg-black overflow-hidden"
       >
         <video 
           autoPlay 
           loop 
           muted 
           playsInline
-          // Videonun yarı şeffaf görünmesini sağlayarak alttaki siyah arka planla harmanlıyoruz
-          className="absolute z-0 w-auto min-w-full min-h-full max-w-none opacity-70"
+          className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-70"
         >
           <source src="/videos/banner-video.mp4" type="video/mp4" />
           Tarayıcınız video etiketini desteklemiyor.
         </video>
-        
-        {/*
-          Önceki siyah katman olan <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-          satırı bu koddan TAMAMEN KALDIRILDI.
-        */}
-        
-        <div className="relative z-10">
-          {/* Bu alan videonun önündedir ve şu an için boştur */}
-        </div>
       </section>
 
-      {/* Hizmetler Bölümü ve Buton Konumu */}
+      {/* Hizmetler Bölümü */}
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -62,15 +52,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {services.map((service, index) => (
               <div key={index} className="p-6">
-                <div className="flex justify-center mb-4">
-                  {service.icon}
-                </div>
+                <div className="flex justify-center mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
           </div>
-          
           <div className="mt-16 text-center">
             <Link href="/projeler" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105">
               Tüm Projelerimizi İnceleyin

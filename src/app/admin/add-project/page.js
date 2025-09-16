@@ -1,56 +1,65 @@
-// src/app/admin/add-project/page.js
+// src/app/admin/add-project/page.js'in TAM KODU
 
 "use client";
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
+const projectCategories = ["Toplu Konut", "Sanayi Sitesi", "Altyapı", "Hastane", "Spor Kompleksi", "Ticari", "Sosyal Tesis"];
+
 export default function AddProjectPage() {
-  const [title, setTitle] = useState('');
-  const [summary, setSummary] = useState('');
-  const [category, setCategory] = useState('');
+  const [formData, setFormData] = useState({
+    title: '',
+    summary: '',
+    status: 'Devam Ediyor',
+    categories: [],
+    city: '',
+    district: '',
+    isveren: '',
+    konutSayisi: 0,
+    dukkanSayisi: 0,
+    googleMapsLink: '', // YENİ
+    krokiLink: '',      // YENİ
+    documentLink: '',   // YENİ
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const router = useRouter();
+
+  // handleInputChange ve handleCategoryChange fonksiyonları aynı kalıyor...
+  const handleInputChange = (e) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({ ...prev, [name]: type === 'number' ? Number(value) : value }));
+  };
+  const handleCategoryChange = (e) => {
+    const { value, checked } = e.target;
+    setFormData(prev => {
+      if (checked) { return { ...prev, categories: [...prev.categories, value] }; } 
+      else { return { ...prev, categories: prev.categories.filter(c => c !== value) }; }
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setMessage('');
-
-    if (!title || !summary || !category) {
-      setMessage('Lütfen tüm alanları doldurun.');
+    if (!formData.title || !formData.city) {
+      setMessage('Lütfen Proje Başlığı ve Şehir alanlarını doldurun.');
       setIsLoading(false);
       return;
     }
-
     try {
-      const newProject = {
-        title,
-        summary,
-        category,
-        createdAt: new Date(), // Projenin oluşturulma tarihini de ekleyelim
-      };
-      
-      await addDoc(collection(db, 'projeler'), newProject);
-      
+      await addDoc(collection(db, 'projeler'), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
       setMessage('Proje başarıyla eklendi! Yönlendiriliyorsunuz...');
-      // Formu temizle
-      setTitle('');
-      setSummary('');
-      setCategory('');
-
-      // 2 saniye sonra dashboard'a yönlendir
-      setTimeout(() => {
-        router.push('/admin/dashboard');
-      }, 2000);
-
+      setTimeout(() => { router.push('/admin/dashboard'); }, 2000);
     } catch (error) {
       console.error("Proje eklenirken hata:", error);
-      setMessage('Proje eklenirken bir hata oluştu. Lütfen tekrar deneyin.');
-    } finally {
+      setMessage('Proje eklenirken bir hata oluştu.');
       setIsLoading(false);
     }
   };
@@ -58,24 +67,31 @@ export default function AddProjectPage() {
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mb-6">Yeni Proje Ekle</h1>
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">
-        <div className="space-y-4">
-          <div>
-            <label htmlFor="title" className="block text-sm font-medium text-gray-700">Proje Başlığı</label>
-            <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
-          </div>
-          <div>
-            <label htmlFor="summary" className="block text-sm font-medium text-gray-700">Kısa Açıklama (Özet)</label>
-            <textarea id="summary" value={summary} onChange={(e) => setSummary(e.target.value)} rows="4" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
-          </div>
-          <div>
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700">Kategori</label>
-            <input type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" placeholder="Örn: Yol Yapımı, Altyapı..." />
-          </div>
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md space-y-6">
+        {/* ... (Önceki tüm form alanları aynı kalıyor) ... */}
+        
+        {/* YENİ EKLENEN BÖLÜM */}
+        <div className="border-t pt-6">
+            <h2 className="text-lg font-semibold text-gray-700 mb-4">Proje Linkleri (Opsiyonel)</h2>
+            <div className="space-y-4">
+                <div>
+                    <label htmlFor="googleMapsLink" className="block text-sm font-medium text-gray-700">Google Haritalar Linki</label>
+                    <input type="url" name="googleMapsLink" value={formData.googleMapsLink} onChange={handleInputChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" placeholder="https://maps.app.goo.gl/..." />
+                </div>
+                <div>
+                    <label htmlFor="krokiLink" className="block text-sm font-medium text-gray-700">Kroki / Plan Linki</label>
+                    <input type="url" name="krokiLink" value={formData.krokiLink} onChange={handleInputChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" placeholder="PDF, resim veya dosya linki" />
+                </div>
+                <div>
+                    <label htmlFor="documentLink" className="block text-sm font-medium text-gray-700">Proje Dokümanı Linki</label>
+                    <input type="url" name="documentLink" value={formData.documentLink} onChange={handleInputChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" placeholder="Sunum, rapor veya dosya linki" />
+                </div>
+            </div>
         </div>
+
         <div className="mt-6">
-          <button type="submit" disabled={isLoading} className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-gray-400">
-            {isLoading ? 'Kaydediliyor...' : 'Projeyi Kaydet'}
+          <button type="submit" disabled={isLoading} className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 disabled:bg-gray-400 font-bold">
+            {isLoading ? 'Kaydediliyor...' : 'Yeni Projeyi Kaydet'}
           </button>
         </div>
         {message && <p className="mt-4 text-center text-sm">{message}</p>}

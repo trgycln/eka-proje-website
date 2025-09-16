@@ -10,7 +10,7 @@ export default function HakkimizdaPage() {
       <div className="bg-white py-12 border-b border-slate-200">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-gray-900">Hakkımızda</h1>
-          <p className="mt-2 text-lg text-gray-600">EKA Proje'nin Vizyonu ve Tecrübesi</p>
+          <p className="mt-2 text-lg text-gray-600">EKA Proje&apos;nin Vizyonu ve Tecrübesi</p>
         </div>
       </div>
       <div className="container mx-auto px-4 py-20">

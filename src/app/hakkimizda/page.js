@@ -20,7 +20,7 @@ export default function HakkimizdaPage() {
           <div>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Kurucumuzun Tecrübesi, Projelerimizin Güvencesi</h2>
             <p className="text-gray-700 mb-4">
-              EKA Proje, İnşaat Mühendisi [Tolga CELEN] tarafından, sektördeki yılların birikimi ve tecrübesiyle kurulmuştur. Her projeye, bir mühendisin titizliğini ve bir liderin vizyonunu yansıtarak, en yüksek kalite standartlarında işler teslim etmeyi misyon edindik.
+              EKA Proje, İnşaat Mühendisi Tolga CELEN tarafından, sektördeki yılların birikimi ve tecrübesiyle kurulmuştur. Her projeye, bir mühendisin titizliğini ve bir liderin vizyonunu yansıtarak, en yüksek kalite standartlarında işler teslim etmeyi misyon edindik.
             </p>
             <p className="text-gray-700">
               Vizyonumuz, sadece yapıları değil, aynı zamanda geleceği de inşa etmektir. Türkiye&apos;de ve ileride uluslararası arenada, altyapı ve yol yapımı denince akla gelen ilk, en güvenilir ve en yenilikçi firma olmayı hedefliyoruz.
@@ -36,7 +36,7 @@ export default function HakkimizdaPage() {
             <div className="w-80 h-80 mx-auto bg-gray-300 rounded-full flex items-center justify-center">
               <span className="text-gray-500">Fotoğraf Alanı</span>
             </div>
-            <h3 className="mt-4 text-xl font-semibold">[Abinin Adı Soyadı]</h3>
+            <h3 className="mt-4 text-xl font-semibold">Tolga CELEN</h3>
             <p className="text-gray-600">Kurucu / İnşaat Mühendisi</p>
           </div>
         </div>

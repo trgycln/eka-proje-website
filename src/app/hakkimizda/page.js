@@ -9,7 +9,7 @@ export default function HakkimizdaPage() {
       <div className="bg-gray-100 py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-gray-900">Hakkımızda</h1>
-          <p className="mt-2 text-lg text-gray-600">EKA Proje'nin Temelleri ve Gelecek Vizyonu</p>
+          <p className="mt-2 text-lg text-gray-600">EKA Proje&apos;nin Temelleri ve Gelecek Vizyonu</p>
         </div>
       </div>
 
@@ -20,10 +20,10 @@ export default function HakkimizdaPage() {
           <div>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Kurucumuzun Tecrübesi, Projelerimizin Güvencesi</h2>
             <p className="text-gray-700 mb-4">
-              EKA Proje, İnşaat Mühendisi [Abinin Adı Soyadı] tarafından, sektördeki yılların birikimi ve tecrübesiyle kurulmuştur. Her projeye, bir mühendisin titizliğini ve bir liderin vizyonunu yansıtarak, en yüksek kalite standartlarında işler teslim etmeyi misyon edindik.
+              EKA Proje, İnşaat Mühendisi [Tolga CELEN] tarafından, sektördeki yılların birikimi ve tecrübesiyle kurulmuştur. Her projeye, bir mühendisin titizliğini ve bir liderin vizyonunu yansıtarak, en yüksek kalite standartlarında işler teslim etmeyi misyon edindik.
             </p>
             <p className="text-gray-700">
-              Vizyonumuz, sadece yapıları değil, aynı zamanda geleceği de inşa etmektir. Türkiye'de ve ileride uluslararası arenada, altyapı ve yol yapımı denince akla gelen ilk, en güvenilir ve en yenilikçi firma olmayı hedefliyoruz.
+              Vizyonumuz, sadece yapıları değil, aynı zamanda geleceği de inşa etmektir. Türkiye&apos;de ve ileride uluslararası arenada, altyapı ve yol yapımı denince akla gelen ilk, en güvenilir ve en yenilikçi firma olmayı hedefliyoruz.
             </p>
           </div>
           

@@ -40,5 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
 # Firebase Admin SDK anahtarını yok say
 eka-proje-website-firebase-adminsdk-fbsvc-249a4c4b3a.json
+
+
